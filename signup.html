@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <form action="https://iopasso.kopiro.me/register" method="POST">
+        <div>
+          <label for="first_name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name and surname"
+            required
+            minlength="1"
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="esempio@e.com"
+            required
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="4"
+            required
+          />
+        </div>
+        <div>
+          <label for="password_2">Confirm password</label>
+          <input
+            type="password"
+            id="password_2"
+            name="password_2"
+            minlength="4"
+            required
+          />
+        </div>
+        <div>
+          <label for="birth_date">Birth date</label>
+          <input
+            type="date"
+            id="birth_date"
+            name="birth_date"
+            placeholder="1991_10_30"
+          />
+        </div>
+        <div class="form_buttons_container">
+          <input id="submit" class="form_buttons" type="submit" />
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
