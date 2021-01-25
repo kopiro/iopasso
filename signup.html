@@ -16,7 +16,6 @@
             id="name"
             name="name"
             placeholder="Name and surname"
-            required
             minlength="1"
           />
         </div>
@@ -28,18 +27,11 @@
             id="email"
             name="email"
             placeholder="esempio@e.com"
-            required
           />
         </div>
         <div>
           <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            minlength="4"
-            required
-          />
+          <input type="password" id="password" name="password" minlength="4" />
         </div>
         <div>
           <label for="password_2">Confirm password</label>
@@ -48,7 +40,6 @@
             id="password_2"
             name="password_2"
             minlength="4"
-            required
           />
         </div>
         <div>
@@ -63,8 +54,9 @@
         <div class="form_buttons_container">
           <input id="submit" class="form_buttons" type="submit" />
         </div>
+        <div id="box_error" class="box_error"></div>
       </form>
     </div>
-    <script src="script.js"></script>
+    <script src="signup.js"></script>
   </body>
 </html>

@@ -14,6 +14,12 @@ form.addEventListener("submit", async (e) => {
   //Take the data from the form
   const data = new FormData(form);
 
+  //When the user correct the errors the inputs return not more red
+  const inputs = document.querySelectorAll("input.error");
+  inputs.forEach((element) => {
+    element.classList.remove("error");
+  });
+
   //Send data to the server linked at the action of the form
   const response = await fetch(e.target.action, {
     method: "POST",
@@ -26,23 +32,31 @@ form.addEventListener("submit", async (e) => {
   if (json.error === true) {
     // Get the json value given by the backend as an array of array
     const validation = json.validations;
-
+    //[
+    //[ "name",["Name is required", "Name should have only letter",..] ],
+    //[ "password",["Name is required", "Name should have only letter",..] ]
+    // ]
+    const messagesArray = [];
     validation.forEach((error) => {
-      //[
-      //   "name",
-      //   [
-      //     "Name is required"
-      //   ]
-      // ]
+      //[ "name",["Name is required", "Name should have only letter",..] ]
       const id = error[0];
+      const message = error[1][0];
+      messagesArray.push(message);
 
-      const element = document.getElementById(id);
+      const element = document.querySelectorAll("input[name=" + id + "]");
       element.classList.add("error");
+
+      const box_error = document.querySelector("#box_error");
+
+      //Show display with errors
+      box_error.classList.remove("box_error");
 
       //(for (let i = 0; i < error.length; i++) {
       //let validation_message = element[i].toString()
       // }
     });
+    //Dobbiamo trasformare l'array dei messaggi di errore in un unica stringa e non più in un array di stringhe
+    box_error.innerText = messagesArray;
   }
 
   // If the data is empty or, server respons with error message

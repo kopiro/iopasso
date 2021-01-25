@@ -13,3 +13,6 @@ body {
 .error {
   border-color: red;
 }
+.box_error {
+  display: none;
+}
