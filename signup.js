@@ -43,7 +43,8 @@ form.addEventListener("submit", async (e) => {
       const message = error[1][0];
       messagesArray.push(message);
 
-      const element = document.querySelectorAll("input[name=" + id + "]");
+      // const element = document.querySelectorAll("input[name=" + id + "]");
+      const element = document.getElementById(id);
       element.classList.add("error");
 
       const box_error = document.querySelector("#box_error");
@@ -57,12 +58,7 @@ form.addEventListener("submit", async (e) => {
     });
     //Dobbiamo trasformare l'array dei messaggi di errore in un unica stringa e non più in un array di stringhe
     box_error.innerText = messagesArray;
+  } else {
+    location.href = "/login.html";
   }
-
-  // If the data is empty or, server respons with error message
-  //   if (json.error === true) {
-  //     alert(json.message);
-  //   } else {
-  //     location.href = "/login.html";
-  //   }
 });
