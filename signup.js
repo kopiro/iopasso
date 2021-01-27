@@ -59,6 +59,6 @@ form.addEventListener("submit", async (e) => {
     //Dobbiamo trasformare l'array dei messaggi di errore in un unica stringa e non più in un array di stringhe
     box_error.innerText = messagesArray;
   } else {
-    location.href = "/login.html";
+    location.href = "/login";
   }
 });
