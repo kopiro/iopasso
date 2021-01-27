@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Login</title>
   </head>
   <body>
-    <div class="box"></div>
-    <script src="script.js"></script>
+    <div class="box">
+      <form id="login_form">
+        <div>
+          <label for="name"> Name and Surname </label>
+          <input id="name" name="name" />
+        </div>
+        <div>
+          <lavel for="password"> Password </lavel>
+          <input id="password" name="password" />
+        </div>
+        <div class="form_buttons_container">
+          <input id="form_buttons" type="submit" />
+        </div>
+      </form>
+    </div>
+    <script src="login.js"></script>
   </body>
 </html>
