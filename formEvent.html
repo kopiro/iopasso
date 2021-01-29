@@ -3,25 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <link rel="stylesheet" href="Event.css" />
     <title>Made your event</title>
   </head>
   <body>
     <div class="box_event">
       <form id="form_event">
         <div>
-          <label for="Event name">Name event</label>
+          <label for="eventName">Name event</label>
           <input type="text" id="eventName" name="eventName" />
         </div>
         <div>
-          <label for="Place">Place event</label>
+          <label for="place">Place event</label>
           <input type="text" id="place" name="place" />
         </div>
         <div>
-          <label for="Time">Hour event</label>
+          <label for="time">Hour event</label>
           <input type="time" id="time" name="time" />
+        </div>
+        <div>
+            <label for="guest">Guest</label>
+            <select name="select" id="guest" multiple></select>
         </div>
         </div>
       </form>
     </div>
+    <script src="Event.js"></script>
   </body>
 </html>
