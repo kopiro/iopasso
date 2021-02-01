@@ -4,26 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width='device-width', initial-scale=1.0" />
     <link rel="stylesheet" href="event.css" />
+    <script src="check_login.js"></script>
     <title>Made your event</title>
   </head>
   <body>
     <div class="box_event">
       <form id="form_event">
         <div>
-          <label for="eventName">Name event</label>
-          <input type="text" id="eventName" name="eventName" />
+          <label for="eventName">Name</label>
+          <input type="text" id="eventName" name="eventName" required/>
         </div>
         <div>
-          <label for="place">Place event</label>
-          <input type="text" id="place" name="place" />
+          <label for="place">Address</label>
+          <input type="text" id="place" name="place"/>
         </div>
-        <div>
+        <!-- <div>
           <label for="time">Hour event</label>
-          <input type="time" id="time" name="time" />
-        </div>
+          <input type="time" id="time" name="time"/>
+        </div> -->
         <div>
-            <label for="guest">Guest</label>
+            <label for="guest">Guests</label>
             <select name="select" id="guest" multiple></select>
+        </div>
+        <div class="event_buttons">
+          <input id="submit" class="event_buttons" type="submit"/>
         </div>
         </div>
       </form>
