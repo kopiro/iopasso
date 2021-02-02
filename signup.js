@@ -32,14 +32,14 @@ form.addEventListener("submit", async (e) => {
   if (json.error === true) {
     //prendere il messaggio generico di errore
     const message = json.message;
-    alert(message);
+    // alert(message);
     // Get the json value given by the backend as an array of array
     const validation = json.validations;
     //[
     //[ "name",["Name is required", "Name should have only letter",..] ],
     //[ "password",["Name is required", "Name should have only letter",..] ]
     // ]
-    const messagesArray = [];
+    const messagesArray = [message + ":" + ""];
     validation.forEach((error) => {
       //[ "name",["Name is required", "Name should have only letter",..] ]
       const id = error[0];
