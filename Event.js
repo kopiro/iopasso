@@ -17,8 +17,8 @@ async function getMe() {
 }
 //Call ALWAYS the fuynction to be data usable!
 getMe();
-//Fetch in get to the server from Guests file to
-//creo asyc funnction per prendere con la fetch in get la lista di tutti gli utenti
+
+//Fetch in get to the server from Guests file to get the obj of all users
 async function listGuests() {
   const response = await fetch("https://iopasso.kopiro.me/guests", {
     method: "GET",
@@ -26,23 +26,23 @@ async function listGuests() {
       authorization: "Bearer " + current_token,
     },
   });
-  // trasformiamo la lista in json
+  //Always trasform the data get from the server in JSON
   const guests = await response.json();
-
-  //prendiamo l'elemento select dall´html
+  //Get the select html tag
   const select = document.querySelector("#guests");
-  //cicliamo la risposta della fetch in get per prenderci solo il nome dell'utente
+  //Iterate the fetch response to gat from this only tha value of kay name of the  users
   for (const item of guests) {
-    //abbiamo creato l'elemento html option del tag select in javascript
+    //Create in javascript the html option of the select tag because this is a variable dependent from how many users the app will have
     const options = document.createElement("option");
     options.text = item.name;
-    //abbiamo aggiunto i nomi degli utenti come option del select
+    //Add the users' name as select'options
     select.options.add(options);
   }
 }
-//richiamiamo la funzione
+//ALWAYS CALL THE FUNCTION!!
 listGuests();
-//al submit il form non deve inviare i dati dell'evento perchè vogliamo usare la fetch
+
+//On submit the form doesn't send the events date because we want to use fetch in POST
 form_event.addEventListener("submit", async (e) => {
   e.preventDefault();
   const formData = new FormData(form_event);
