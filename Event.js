@@ -1,22 +1,56 @@
-//creare un input selezione tramire CreateElement("")collegandolo all'html
-// al click-->(addEventListener())parte la fetch
-//dove l'utente puo scegliere gli invitati, tramite fetch
-//cioè tutti quelli che si sono iscritti all'app
-const response = [
-  { id: 1, name: "Ani" },
-  { id: 2, name: "Eni" },
-  { id: 3, name: "Fulvio" },
-];
+const form_event = document.querySelector("#form_event");
+//Get identify token from localStorage to be authorized later from the server {attention!! GetItem() need only the key value!}
+const current_token = localStorage.getItem("access_token");
 
-const select = document.querySelector("#guest");
-
-for (const i of response) {
-  const options = document.createElement("option");
-  options.text = i.name;
-  select.options.add(options);
+//Make a fetch in get from file Me in the server to know all users' online data {es. name= Ani, id=2, email=ani@me.com etc...}
+async function getMe() {
+  const response = await fetch("https://iopasso.kopiro.me/me", {
+    method: "GET",
+    headers: {
+      authorization: "Bearer " + current_token,
+    },
+  });
+  const me = await response.json();
+  const user_online = me.name;
+  console.log(user_online);
+  return user_online;
 }
-//add eventListner
-//fetch
-//ciclare la response del server e prenderci solo i valori di name
+//Call ALWAYS the fuynction to be data usable!
+getMe();
 
-//create a html option tag for chose the guests
+//Fetch in get to the server from Guests file to get the obj of all users
+async function listGuests() {
+  const response = await fetch("https://iopasso.kopiro.me/guests", {
+    method: "GET",
+    headers: {
+      authorization: "Bearer " + current_token,
+    },
+  });
+  //Always trasform the data get from the server in JSON
+  const guests = await response.json();
+  //Get the select html tag
+  const select = document.querySelector("#guests");
+  //Iterate the fetch response to gat from this only tha value of kay name of the  users
+  for (const item of guests) {
+    //Create in javascript the html option of the select tag because this is a variable dependent from how many users the app will have
+    const options = document.createElement("option");
+    options.text = item.name;
+    //Add the users' name as select'options
+    select.options.add(options);
+  }
+}
+//ALWAYS CALL THE FUNCTION!!
+listGuests();
+
+//On submit the form doesn't send the events date because we want to use fetch in POST
+form_event.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form_event);
+
+  const select = document.querySelector("#guests");
+
+  const response = await fetch("https://iopasso.kopiro.me/form_event", {
+    method: "POST",
+    body: formData,
+  });
+});
