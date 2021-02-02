@@ -30,6 +30,9 @@ form.addEventListener("submit", async (e) => {
   const json = await response.json();
 
   if (json.error === true) {
+    //prendere il messaggio generico di errore
+    const message = json.message;
+    alert(message);
     // Get the json value given by the backend as an array of array
     const validation = json.validations;
     //[
