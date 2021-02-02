@@ -39,7 +39,7 @@ form.addEventListener("submit", async (e) => {
     //[ "name",["Name is required", "Name should have only letter",..] ],
     //[ "password",["Name is required", "Name should have only letter",..] ]
     // ]
-    const messagesArray = [message + ":" + ""];
+    const messagesArray = [];
     validation.forEach((error) => {
       //[ "name",["Name is required", "Name should have only letter",..] ]
       const id = error[0];
@@ -60,7 +60,7 @@ form.addEventListener("submit", async (e) => {
       // }
     });
     //Dobbiamo trasformare l'array dei messaggi di errore in un unica stringa e non più in un array di stringhe
-    box_error.innerText = messagesArray;
+    box_error.innerText = message + ":" + messagesArray.join(",");
   } else {
     location.href = "/login.html";
   }
