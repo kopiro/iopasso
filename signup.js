@@ -43,7 +43,7 @@ form.addEventListener("submit", async (e) => {
       const message = error[1][0];
       messagesArray.push(message);
 
-      // const element = document.querySelectorAll("input[name=" + id + "]");
+      // const element = document.querySelectorAll("input["name= + id + "]");
       const element = document.getElementById(id);
       element.classList.add("error");
 
