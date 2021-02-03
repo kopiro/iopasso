@@ -46,6 +46,16 @@ async function listGuests() {
       select.options.add(options);
     }
   }
+
+  // let newGuests = [];
+  // newGuests = guests.filter(function (item) {
+  //   if (item.name !== current_user) {
+  //     const options = document.createElement("option");
+  //     options.text = item.name;
+  //     select.options.add(options);
+  //   }
+  //   return true;
+  // });
 }
 //ALWAYS CALL THE FUNCTION! When and where you need its return value!!
 listGuests();

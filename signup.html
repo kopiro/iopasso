@@ -4,23 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Signup</title>
   </head>
   <body>
-    <div class="box_form">
+    <div id="box">
+      <div id="container_one">
+      </div>
+      <div id="container_two">
+        <div id="container_title">
+          <h1>Signup</h1> 
+          <div class="divider"></div>
+        </div>
       <form action="https://iopasso.kopiro.me/register" method="POST">
-        <div>
-          <label for="first_name">Name</label>
+        <div class="container_input">
+          <label for="first_name">Name and Surname</label> </br>
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="Name and surname"
+            placeholder="Insert here your name and surname"
             minlength="1"
           />
         </div>
-        <div>
-          <label for="email">Email</label>
+        <div class="container_input">
+          <label for="email">Email</label></br>
           <input
             pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
             type="text"
@@ -29,12 +41,12 @@
             placeholder="esempio@e.com"
           />
         </div>
-        <div>
-          <label for="password">Password</label>
+        <div class="container_input">
+          <label for="password">Password</label></br>
           <input type="password" id="password" name="password" minlength="4" />
         </div>
-        <div>
-          <label for="password_2">Confirm password</label>
+        <div class="container_input">
+          <label for="password_2">Confirm password</label></br>
           <input
             type="password"
             id="password_2"
@@ -42,8 +54,8 @@
             minlength="4"
           />
         </div>
-        <div>
-          <label for="birth_date">Birth date</label>
+        <div class="container_input">
+          <label for="birth_date">Birth date</label></br>
           <input
             type="date"
             id="birth_date"
@@ -52,9 +64,10 @@
           />
         </div>
         <div class="form_buttons_container">
-          <input id="submit" class="form_buttons" type="submit" />
+          <input id="submit" class="form_buttons" type="submit" value="Sign up" />
         </div>
         <div id="box_error" class="box_error"></div>
+      </div>
       </form>
     </div>
     <script src="signup.js"></script>
