@@ -36,7 +36,7 @@ async function listGuests() {
   const current_user = await getMe();
 
   //Iterate the fetch response to get from this only the value of kay name of the  users
-  for (const item of guests) {
+  /** for (const item of guests) {
     //So if the name of guests isn't the same of current user name do this
     if (item.name !== current_user) {
       //Create in javascript the html option of the select tag because this is a variable dependent from how many users the app will has
@@ -46,6 +46,16 @@ async function listGuests() {
       select.options.add(options);
     }
   }
+  **/
+  let newGuests = [];
+  newGuests = guests.filter(function (item) {
+    if (item.name !== current_user) {
+      const options = document.createElement("option");
+      options.text = item.name;
+      select.options.add(options);
+    }
+    return newGuests;
+  });
 }
 //ALWAYS CALL THE FUNCTION! When and where you need its return value!!
 listGuests();
