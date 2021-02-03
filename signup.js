@@ -30,6 +30,9 @@ form.addEventListener("submit", async (e) => {
   const json = await response.json();
 
   if (json.error === true) {
+    //prendere il messaggio generico di errore
+    const message = json.message;
+    // alert(message);
     // Get the json value given by the backend as an array of array
     const validation = json.validations;
     //[
@@ -57,7 +60,7 @@ form.addEventListener("submit", async (e) => {
       // }
     });
     //Dobbiamo trasformare l'array dei messaggi di errore in un unica stringa e non più in un array di stringhe
-    box_error.innerText = messagesArray;
+    box_error.innerText = message + ":" + messagesArray.join(",");
   } else {
     location.href = "/login.html";
   }
