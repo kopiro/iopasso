@@ -57,7 +57,6 @@ label {
   margin: 16px 16px 16px 0;
 }
 
-
 .div_error {
   font-size: 13px;
   color: red;
@@ -72,7 +71,6 @@ label {
   margin-top: 16px;
   font-weight: 700;
   color: #d01515;
-}
 }
 .box_error {
   display: none;
