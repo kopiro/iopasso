@@ -15,7 +15,7 @@ body {
 #container_form {
   display: block;
   width: 464px;
-  padding-left: 330px !important;
+  padding-left: 360px !important;
   padding: 40px;
   background: url(img/women_password.png) left center no-repeat;
   background-size: auto 100%;
@@ -72,6 +72,7 @@ label {
   font-weight: 700;
   color: #d01515;
 }
+
 .box_error {
   display: none;
 }

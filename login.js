@@ -20,6 +20,9 @@ form.addEventListener("submit", async (e) => {
     localStorage.setItem("access_token", json.access_token);
     location.href = "/index.html";
   } else {
-    alert(json.message);
+    const box_error = document.querySelector("#box_error");
+    box_error.classList.remove("box_error");
+    const genericMessage = json.message;
+    box_error.innerText = "* " + genericMessage + "!";
   }
 });
