@@ -32,7 +32,7 @@ form.addEventListener("submit", async (e) => {
   if (json.error === true) {
     //prendere il messaggio generico di errore
     const genericMessage = json.message;
-    box_error.innerText = genericMessage;
+    box_error.innerText = "* " + genericMessage + "!";
     // alert(message);
     // Get the json value given by the backend as an array of array
     const validation = json.validations;
@@ -54,7 +54,7 @@ form.addEventListener("submit", async (e) => {
       let div_error = document.createElement("div");
       div_error.classList.add("div_error");
       element.after(div_error);
-      div_error.innerText = message;
+      div_error.innerText = "* " + message;
 
       const box_error = document.querySelector("#box_error");
 
