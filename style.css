@@ -1,27 +1,80 @@
 body {
-  background-color: #e2e3ed;
+  background-color: #f9f9fb;
+  font-family: "Open Sans", sans-serif;
 }
-.box_form {
-  background-color: white;
-  width: 500px;
-  padding: 50px;
-  box-shadow: 0px 13px 26px rgba(98, 69, 231, 0.15);
-  border-radius: 20px;
+#box {
   display: block;
+  overflow: hidden;
+  width: 840px;
   margin: 50px auto;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 16px rgba(204, 204, 206, 0.5);
+}
+
+#container_form {
+  display: block;
+  width: 464px;
+  padding-left: 360px !important;
+  padding: 40px;
+  background: url(img/women_password.png) left center no-repeat;
+  background-size: auto 100%;
+}
+
+h1 {
+  font-family: "Lora", serif;
+  color: #494a7d;
+  margin: 0px 0px 24px 0px;
+}
+.divider {
+  border: 1px solid #f9f9fb;
+  margin-bottom: 24px;
+}
+
+.container_input input {
+  height: 32px;
+  width: 320px;
+  margin-top: 8px;
+  padding-left: 8px;
+}
+.container_input {
+  margin-bottom: 24px;
+}
+label {
+  color: #494a7d;
+}
+
+.form_buttons_container input {
+  border-width: 0px;
+  border-radius: 4px;
+  padding: 8px;
+  width: 106px;
+  height: 42px;
+  background-color: #0c75ff;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 16px 16px 16px 0;
+}
+
+.div_error {
+  font-size: 13px;
+  color: red;
+  margin-top: 8px;
+  margin-left: 8px;
 }
 .error {
   border-color: red;
 }
-.box_error {
-  display: none;
+
+#box_error {
+  margin-top: 16px;
+  font-weight: 700;
+  color: #d01515;
 }
 
-.box {
-  background-color: #f3f4f7;
-  border-radius: 20px;
-  display: block;
-  margin: 50px auto;
+.box_error {
+  display: none;
 }
 
 #menu {
@@ -38,4 +91,8 @@ body {
   height: 100%;
   background: #ffffff;
   border-radius: 0px 0px 0px 16px;
+}
+
+#login_form a {
+  margin-top: 8px;
 }
