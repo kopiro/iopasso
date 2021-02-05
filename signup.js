@@ -31,7 +31,8 @@ form.addEventListener("submit", async (e) => {
 
   if (json.error === true) {
     //prendere il messaggio generico di errore
-    const message = json.message;
+    const genericMessage = json.message;
+    box_error.innerText = "* " + genericMessage + "!";
     // alert(message);
     // Get the json value given by the backend as an array of array
     const validation = json.validations;
@@ -50,6 +51,11 @@ form.addEventListener("submit", async (e) => {
       const element = document.getElementById(id);
       element.classList.add("error");
 
+      let div_error = document.createElement("div");
+      div_error.classList.add("div_error");
+      element.after(div_error);
+      div_error.innerText = "* " + message + "";
+
       const box_error = document.querySelector("#box_error");
 
       //Show display with errors
@@ -60,7 +66,6 @@ form.addEventListener("submit", async (e) => {
       // }
     });
     //Dobbiamo trasformare l'array dei messaggi di errore in un unica stringa e non più in un array di stringhe
-    box_error.innerText = message + ":" + messagesArray.join(",");
   } else {
     location.href = "/login.html";
   }
