@@ -57,8 +57,53 @@ form_event.addEventListener("submit", async (e) => {
 
   const select = document.querySelector("#guests");
 
-  const response = await fetch("https://iopasso.kopiro.me/form_event", {
+  const response = await fetch("https://iopasso.kopiro.me/events", {
     method: "POST",
     body: formData,
+    headers: {
+      authorization: "Bearer " + current_token,
+    },
   });
+
+  const inputs = document.querySelectorAll("input.error");
+  inputs.forEach((element) => {
+    element.classList.remove("error");
+  });
+
+  //Get server response to check if there is errors
+  const json = await response.json();
+
+  if (json.error === true) {
+    //prendere il messaggio generico di errore
+    const genericMessage = json.message;
+    box_error.innerText = "* " + genericMessage + "!";
+
+    // Get the json value given by the backend as an array of array
+    const validation = json.validations;
+    //[
+    //[ "name",["Name is required", "Name should have only letter",..] ],
+    //[ "password",["Name is required", "Name should have only letter",..] ]
+    // ]
+    const messagesArray = [];
+    validation.forEach((error) => {
+      //[ "name",["Name is required", "Name should have only letter",..] ]
+      const id = error[0];
+      const message = error[1][0];
+      messagesArray.push(message);
+
+      // const element = document.querySelectorAll("input["name= + id + "]");
+      const element = document.getElementById(id);
+      element.classList.add("error");
+
+      let div_error = document.createElement("div");
+      div_error.classList.add("div_error");
+      element.after(div_error);
+      div_error.innerText = "* " + message + "";
+
+      const box_error = document.querySelector("#box_error");
+
+      //Show display with errors
+      box_error.classList.remove("box_error");
+    });
+  }
 });

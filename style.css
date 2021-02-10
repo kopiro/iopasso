@@ -85,14 +85,21 @@ label {
 }
 
 #sidebar {
-  position: absolute;
-  display: flex;
   width: 70px;
   height: 100%;
+  display: block;
+  float: left;
   background: #ffffff;
   border-radius: 0px 0px 0px 16px;
 }
 
 #login_form a {
   margin-top: 8px;
+}
+
+.generic_container {
+  height: 1000px;
+  width: 500px;
+  background-color: #0c75ff;
+  display: block;
 }

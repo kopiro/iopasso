@@ -21,14 +21,17 @@
           <label for="address">Address</label></br>
           <input type="text" id="address" name="address"/>
         </div>
-        <!-- <div>
-          <label for="time">Hour event</label>
-          <input type="time" id="time" name="time"/>
-        </div> -->
+        <div>
+          <label for="meeting-time">Choose a date for your appointment:</label>
+
+          <input type="datetime-local" id="meeting-time"
+                 name="meeting-time" value="2018-06-12T19:30"
+                 >
         <div class="container_input">
             <label for="guests">Guests</label></br>
             <select name="select" id="guests" multiple></select>
         </div>
+        <div id="box_error" class="box_error"></div>
         <div class="event_buttons">
           <input id="submit" class="event_buttons" type="submit"/>
         </div>
