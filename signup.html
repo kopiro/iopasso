@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/js/common.js"></script>
     <title>Signup</title>
   </head>
   <body>
@@ -18,14 +19,14 @@
           <h1>Signup</h1> 
           <div class="divider"></div>
         </div>
-      <form action="https://iopasso.kopiro.me/register" method="POST">
+      <form data-javascript data-action="/register" data-method="POST">
         <div class="container_input">
           <label for="first_name">Name and Surname</label> </br>
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="Insert here your name and surname"
+            placeholder="Erri Cuttar"
             minlength="1"
           />
         </div>
@@ -68,6 +69,6 @@
       </div>
       </form>
     </div>
-    <script src="signup.js"></script>
+    <script src="/js/signup.js"></script>
   </body>
 </html>
