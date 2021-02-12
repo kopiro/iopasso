@@ -8,7 +8,7 @@ form.addEventListener("submit", async (e) => {
   const formData = new FormData(form);
 
   //GOL : fetch method post per mandare i dati della form di login
-  const response = await fetch("https://iopasso.kopiro.me/login", {
+  const response = await fetch(`${window.API_URL}/login`, {
     method: "POST",
     body: formData,
   });
