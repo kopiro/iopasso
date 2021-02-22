@@ -41,6 +41,7 @@ async function listGuests() {
       //Create in javascript the html option of the select tag because this is a variable dependent from how many users the app will has
       const options = document.createElement("option");
       options.text = item.name;
+      options.value = item.id;
       //Add the users' name as select'options
       select.options.add(options);
     }
@@ -50,5 +51,5 @@ async function listGuests() {
 listGuests();
 
 function onFormSuccess(json) {
-  location.href = "/login.html";
+  location.href = "/index.html";
 }
