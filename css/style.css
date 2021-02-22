@@ -84,22 +84,28 @@ label {
   border-radius: 16px 16px 0px 0px;
 }
 
+.generic_container {
+  overflow: hidden;
+  display: flex;
+}
+
 #sidebar {
   width: 70px;
-  height: 100%;
+  min-height: 100vh;
   display: block;
   float: left;
   background: #ffffff;
   border-radius: 0px 0px 0px 16px;
 }
 
+#container{
+background-color: red;
+display: block;
+float: left;
+width: 100%;
+}
+
 #login_form a {
   margin-top: 8px;
 }
 
-.generic_container {
-  height: 1000px;
-  width: 500px;
-  background-color: #0c75ff;
-  display: block;
-}
