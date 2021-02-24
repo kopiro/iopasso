@@ -14,5 +14,5 @@ form.addEventListener("submit", async (e) => {
 });
 
 function onFormSuccess(json) {
-  location.href = "/login.html";
+  location.href = "/waiting-activation.html";
 }
