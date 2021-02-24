@@ -4,7 +4,7 @@ const current_token = localStorage.getItem("access_token");
 //Make a fetch in get from file Me in the server to know all users' online data {es. name= Ani, id=2, email=ani@me.com etc...}
 //and also we return from this async function only the current user name which is online! {we need it later..}
 async function getMe() {
-  const response = await fetch(`${window.API_URL}/me`, {
+  const response = await fetch(`${window.API_URL}/users/me`, {
     method: "GET",
     headers: {
       authorization: "Bearer " + current_token,

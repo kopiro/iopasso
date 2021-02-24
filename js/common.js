@@ -1,5 +1,5 @@
 // window.API_URL = "http://10.0.0.9:5000";
-window.API_URL = "https://iopasso.kopiro.me";
+window.API_URL = "https://api-iopasso.kopiro.me";
 
 function docReady(fn) {
   // see if DOM is already available
