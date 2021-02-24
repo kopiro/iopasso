@@ -1,4 +1,4 @@
-const generic_container = document.querySelector("#generic_container");
+const container = document.querySelector("#container");
 const current_token = localStorage.getItem("access_token");
 //ci prendiamo la lista degli eventi creati fin ora da tutti gli utenti
 async function getListOfEvents() {
@@ -11,7 +11,7 @@ async function getListOfEvents() {
   //prendiamo solo il nome e l'indirizzo di ogni singolo evento creato fin ora
   const json = await response.json();
   json.data.forEach((event) => {
-    generic_container.innerText = event.name + " " + event.data;
+    container.innerText = event.name + " " + event.data;
   });
 }
 getListOfEvents();
