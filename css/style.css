@@ -99,14 +99,14 @@ label {
   float: left;
   border-radius: 0px 0px 0px 16px;
   padding: 48px 24px;
-  background-color:rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
 }
 
-#container{
-background-color: red;
-display: block;
-float: left;
-width: 100%;
+#container {
+  background-color: red;
+  display: block;
+  float: left;
+  width: 100%;
 }
 
 #login_form a {
@@ -116,14 +116,30 @@ width: 100%;
   width: 200px;
 }
 
+#logo {
+  height: 70px;
+}
+
 #profile {
   height: 70px;
   width: 250px;
-  background-color: yellow;
   display: block;
   float: right;
 }
 
-#logo {
-  height: 70px;
+#profile-image {
+  height: 40px;
+  width: 40px;
+  border-radius: 10000px;
+  margin: 15px;
+  display: block;
+  float: left;
+}
+
+#user-online {
+  display: block;
+  float: left;
+  height: 40px;
+  width: 140px;
+  margin: 20px 0px;
 }
