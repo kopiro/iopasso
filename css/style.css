@@ -79,10 +79,12 @@ label {
 }
 
 #menu {
+  display: block;
   background-color: white;
   height: 70px;
   background: #ffffff;
   border-radius: 16px 16px 0px 0px;
+  overflow: hidden;
 }
 
 .generic_container {
@@ -91,12 +93,13 @@ label {
 }
 
 #sidebar {
-  width: 70px;
+  width: 200px;
   min-height: 100vh;
   display: block;
   float: left;
-  background: #ffffff;
   border-radius: 0px 0px 0px 16px;
+  padding: 48px 24px;
+  background-color:rgb(245, 245, 245);
 }
 
 #container{
@@ -108,5 +111,19 @@ width: 100%;
 
 #login_form a {
   margin-top: 8px;
+  display: block;
+  float: left;
+  width: 200px;
 }
 
+#profile {
+  height: 70px;
+  width: 250px;
+  background-color: yellow;
+  display: block;
+  float: right;
+}
+
+#logo {
+  height: 70px;
+}
