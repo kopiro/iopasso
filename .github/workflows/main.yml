@@ -40,3 +40,4 @@ jobs:
           method: POST
           data: "${{ github.repository }}"
           bearerToken: ${{ secrets.NOTIFY_TOKEN }}
+          preventFailureOnNoResponse: true
