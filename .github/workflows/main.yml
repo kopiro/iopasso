@@ -41,3 +41,4 @@ jobs:
           data: "${{ github.repository }}"
           bearerToken: ${{ secrets.NOTIFY_TOKEN }}
           preventFailureOnNoResponse: true
+          timeout: 60000
