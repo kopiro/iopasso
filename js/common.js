@@ -79,4 +79,12 @@ docReady(() => {
       }
     });
   }
+
+  //Logout user
+  const log_out = document.querySelector("#log-out");
+
+  log_out.addEventListener("click", function logOut() {
+    localStorage.removeItem("access_token");
+    location.href = "/login.html";
+  });
 });

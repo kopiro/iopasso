@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/js/common.js"></script>
+    <script src="/js/check_login.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Settings</title>
+  </head>
+  <body>
+    <div class="box">
+        <div id="menu">
+          <img id="logo" src="/img/logo.png" />
+          <div id="profile">
+            <img src="" id="profile-image"></img>
+            <div id="user-online">
+            </div>
+            <button id="log-out" >Log-out</button>
+          </div>
+        </div>
+        <div id="generic_container" class="generic_container">
+            <form data-javascript data-action="/auth/register" data-method="POST">
+                <div class="container_input">
+                    <label for="first_name">Name and Surname</label> </br>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Erri Cuttar"
+                      minlength="1"
+                    />
+                  </div>
+                  <div class="container_input">
+                    <label for="email">Email</label></br>
+                    <input
+                      pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="esempio@e.com"
+                    />
+                  </div>
+                  <div class="container_input">
+                    <label for="password">Password</label></br>
+                    <input type="password" id="password" name="password" minlength="4" />
+                  </div>
+                  <div class="container_input">
+                    <label for="password_2">Confirm password </label></br>
+                    <input
+                      type="password"
+                      id="password_2"
+                      name="password_2"
+                      minlength="4"
+                    />
+                  </div>
+                  <div class="container_input">
+                    <label for="birth_date">Birth date</label></br>
+                    <input
+                      type="date"
+                      id="birth_date"
+                      name="birth_date"
+                      placeholder="1991_10_30"
+                    />
+                  </div>
+                  <div class="form_buttons_container">
+                    <input id="submit" class="form_buttons" type="submit" value="Modify" />
+                  </div>
+                  <div id="box_error" class="box_error"></div>
+                </div>
+                </form>
+      </div>
+     
+      
+      <script src="/js/script.js"></script>
+  </body>
+</html>

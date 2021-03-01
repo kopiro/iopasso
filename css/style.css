@@ -122,7 +122,7 @@ label {
 
 #profile {
   height: 70px;
-  width: 250px;
+  width: 300px;
   display: block;
   float: right;
 }
@@ -139,7 +139,7 @@ label {
 #user-online {
   display: block;
   float: left;
-  height: 40px;
-  width: 140px;
-  margin: 20px 0px;
+  height: 20px;
+  width: 200px;
+  margin-top: 15px;
 }
