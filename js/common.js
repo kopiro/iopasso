@@ -1,6 +1,41 @@
 // window.API_URL = "http://10.0.0.9:5000";
 window.API_URL = "https://api-iopasso.kopiro.me";
 
+//GetMe
+async function getMe() {
+  const response = await fetch(`${window.API_URL}/users/me`, {
+    method: "GET",
+    headers: {
+      authorization: "Bearer " + current_token,
+    },
+  });
+  const me = await response.json();
+  return me;
+}
+async function setCurrentUserUI() {
+  //Logout user
+  const log_out = document.querySelector("#log-out");
+
+  if (log_out) {
+    log_out.addEventListener("click", function logOut() {
+      localStorage.removeItem("access_token");
+      location.href = "/login.html";
+    });
+  }
+
+  const me = await getMe();
+
+  const user_name = document.querySelector("#user-online");
+  if (user_name) {
+    user_name.innerText = me.name;
+  }
+
+  const profile_image = document.querySelector("#profile-image");
+  if (profile_image) {
+    profile_image.src = me.image;
+  }
+}
+
 function docReady(fn) {
   // see if DOM is already available
   if (
@@ -13,9 +48,10 @@ function docReady(fn) {
     document.addEventListener("DOMContentLoaded", fn);
   }
 }
-docReady(() => {
+docReady(async () => {
   //Get identify token from localStorage to be authorized later from the server {attention!! GetItem() need only the key value!}
   const current_token = localStorage.getItem("access_token");
+
   const form = document.querySelector("form[data-javascript]");
   if (form) {
     form.addEventListener("submit", async (e) => {
@@ -79,12 +115,7 @@ docReady(() => {
       }
     });
   }
-
-  //Logout user
-  const log_out = document.querySelector("#log-out");
-
-  log_out.addEventListener("click", function logOut() {
-    localStorage.removeItem("access_token");
-    location.href = "/login.html";
-  });
+  if (current_token) {
+    setCurrentUserUI();
+  }
 });

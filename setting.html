@@ -15,68 +15,78 @@
   </head>
   <body>
     <div class="box">
-        <div id="menu">
-          <img id="logo" src="/img/logo.png" />
-          <div id="profile">
-            <img src="" id="profile-image"></img>
-            <div id="user-online">
-            </div>
-            <button id="log-out" >Log-out</button>
-          </div>
+      <div id="menu">
+        <img id="logo" src="/img/logo.png" />
+        <div id="profile">
+          <img src="" id="profile-image" />
+          <div id="user-online"></div>
+          <button id="log-out">Logout</button>
         </div>
-        <div id="generic_container" class="generic_container">
-            <form data-javascript data-action="/auth/register" data-method="POST">
-                <div class="container_input">
-                    <label for="first_name">Name and Surname</label> </br>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Erri Cuttar"
-                      minlength="1"
-                    />
-                  </div>
-                  <div class="container_input">
-                    <label for="email">Email</label></br>
-                    <input
-                      pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder="esempio@e.com"
-                    />
-                  </div>
-                  <div class="container_input">
-                    <label for="password">Password</label></br>
-                    <input type="password" id="password" name="password" minlength="4" />
-                  </div>
-                  <div class="container_input">
-                    <label for="password_2">Confirm password </label></br>
-                    <input
-                      type="password"
-                      id="password_2"
-                      name="password_2"
-                      minlength="4"
-                    />
-                  </div>
-                  <div class="container_input">
-                    <label for="birth_date">Birth date</label></br>
-                    <input
-                      type="date"
-                      id="birth_date"
-                      name="birth_date"
-                      placeholder="1991_10_30"
-                    />
-                  </div>
-                  <div class="form_buttons_container">
-                    <input id="submit" class="form_buttons" type="submit" value="Modify" />
-                  </div>
-                  <div id="box_error" class="box_error"></div>
-                </div>
-                </form>
       </div>
-     
-      
-      <script src="/js/script.js"></script>
+
+      <div id="box-settings">
+        <form data-javascript data-action="/auth/register" data-method="POST">
+          <div class="container_input">
+            <label for="first_name">Name and Surname</label>
+            <br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder=""
+              minlength="1"
+            />
+          </div>
+          <div class="container_input">
+            <label for="email">Email</label><br />
+            <input
+              pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+              type="text"
+              id="email"
+              name="email"
+              placeholder=""
+            />
+          </div>
+          <div class="container_input">
+            <label for="password">Password</label><br />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              minlength="4"
+            />
+          </div>
+          <div class="container_input">
+            <label for="password_2">Confirm password </label><br />
+            <input
+              type="password"
+              id="password_2"
+              name="password_2"
+              minlength="4"
+            />
+          </div>
+          <div class="container_input">
+            <label for="birth_date">Birth date</label><br />
+            <input
+              type="date"
+              id="birth_date"
+              name="birth_date"
+              placeholder=""
+            />
+          </div>
+          <div class="form_buttons_container">
+            <input
+              id="submit"
+              class="form_buttons"
+              type="submit"
+              value="Modify"
+            />
+          </div>
+          <div id="box_error" class="box_error"></div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>

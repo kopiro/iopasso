@@ -103,7 +103,7 @@ label {
 }
 
 #container {
-  background-color: red;
+  background-color: white;
   display: block;
   float: left;
   width: 100%;
@@ -142,4 +142,16 @@ label {
   height: 20px;
   width: 200px;
   margin-top: 15px;
+}
+
+#box-settings {
+  display: block;
+  width: 350px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+#container a {
+  display: block;
 }
