@@ -3,21 +3,9 @@ const current_token = localStorage.getItem("access_token");
 
 //Make a fetch in get from file Me in the server to know all users' online data {es. name= Ani, id=2, email=ani@me.com etc...}
 //and also we return from this async function only the current user name which is online! {we need it later..}
-async function getMe() {
-  const response = await fetch(`${window.API_URL}/users/me`, {
-    method: "GET",
-    headers: {
-      authorization: "Bearer " + current_token,
-    },
-  });
-  const me = await response.json();
-  const user_online = me.name;
-  console.log(user_online);
-  return user_online;
-}
 
 //Fetch in get to the server from Guests file to get the obj of all users
-async function listGuests() {
+async function listGuests(model) {
   const response = await fetch(`${window.API_URL}/guests`, {
     method: "GET",
     headers: {
@@ -42,13 +30,53 @@ async function listGuests() {
       const options = document.createElement("option");
       options.text = item.name;
       options.value = item.id;
+      if (model) {
+        const found = model.guests.find((e) => e.id === item.id);
+        if (found) {
+          options.selected = true;
+        }
+      } else {
+        options.selected = false;
+      }
       //Add the users' name as select'options
       select.options.add(options);
     }
   }
 }
-//ALWAYS CALL THE FUNCTION! When and where you need its return value!!
-listGuests();
+
+async function setUpForCreation() {
+  listGuests();
+}
+
+async function setUpForEditing(id) {
+  const form = document.querySelector("form");
+  form.dataset.action = "/events/" + id;
+  form.dataset.method = "PUT";
+  const response = await fetch(window.API_URL + "/events/" + id, {
+    method: "GET",
+    headers: {
+      authorization: "Bearer " + current_token,
+    },
+  });
+  const model = await response.json();
+  const $name = document.querySelector("#name");
+  $name.value = model.name;
+  const $address = document.querySelector("#address");
+  $address.value = model.address;
+  const $datetime = document.querySelector("#datetime");
+  $datetime.value = model.datetime.replace(" ", "T").replace(/\:00$/, "");
+
+  listGuests(model);
+}
+
+const url = new URL(location.href);
+const id = url.searchParams.get("id");
+
+if (id) {
+  setUpForEditing(id);
+} else {
+  setUpForCreation();
+}
 
 function onFormSuccess(json) {
   location.href = "/index.html";
