@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/js/common.js"></script>
     <script src="/js/check_login.js"></script>
+
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -46,10 +47,24 @@
             </li>
           </ul>
         </aside>
-        <div id="container"></div>
+        <div id="container">
+          <div id="next_event"></div>
+          <div id="podium">
+            <img src="" />
+          </div>
+          <div id="loser"></div>
+        </div>
+        <div id="side_right">
+          <div id="total_score">Total Score User</div>
+          <div id="counter_events">
+            <h2>Counter events</h2>
+            <div id="total_events"></div>
+            <div class="counter_events_style" id="future_events"></div>
+            <div class="counter_events_style" id="past_events"></div>
+          </div>
+        </div>
       </div>
     </div>
-
     <script src="/js/script.js"></script>
   </body>
 </html>

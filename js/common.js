@@ -36,6 +36,30 @@ async function setCurrentUserUI() {
   }
 }
 
+//ci prendiamo la lista degli eventi creati fin ora da tutti gli utenti
+async function getListOfEvents() {
+  const response = await fetch(`${window.API_URL}/events?limit=2&page=0`, {
+    method: "GET",
+    headers: {
+      authorization: "Bearer " + current_token,
+    },
+  });
+  const json = await response.json();
+  return json;
+}
+
+async function readCollectionEvent() {
+  const response = await fetch(`${window.API_URL}/events`, {
+    method: "GET",
+    headers: {
+      authorization: "Bearer " + current_token,
+    },
+  });
+  const json = await response.json();
+  return json;
+}
+
+//Serve per aspettare che l'utente abbia prima inserito i dati che servono e poi vengano effettuate delle cose
 function docReady(fn) {
   // see if DOM is already available
   if (
@@ -48,6 +72,7 @@ function docReady(fn) {
     document.addEventListener("DOMContentLoaded", fn);
   }
 }
+
 docReady(async () => {
   //Get identify token from localStorage to be authorized later from the server {attention!! GetItem() need only the key value!}
   const current_token = localStorage.getItem("access_token");
