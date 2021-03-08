@@ -1,5 +1,6 @@
 // window.API_URL = "http://10.0.0.9:5000";
 window.API_URL = "https://api-iopasso.kopiro.me";
+const current_token = localStorage.getItem("access_token");
 
 //GetMe
 async function getMe() {
@@ -75,7 +76,6 @@ function docReady(fn) {
 
 docReady(async () => {
   //Get identify token from localStorage to be authorized later from the server {attention!! GetItem() need only the key value!}
-  const current_token = localStorage.getItem("access_token");
 
   const form = document.querySelector("form[data-javascript]");
   if (form) {
