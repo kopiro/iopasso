@@ -38,24 +38,16 @@ async function setCurrentUserUI() {
 }
 
 //ci prendiamo la lista degli eventi creati fin ora da tutti gli utenti
-async function getListOfEvents() {
-  const response = await fetch(`${window.API_URL}/events?limit=2&page=0`, {
-    method: "GET",
-    headers: {
-      authorization: "Bearer " + current_token,
-    },
-  });
-  const json = await response.json();
-  return json;
-}
-
-async function readCollectionEvent() {
-  const response = await fetch(`${window.API_URL}/events`, {
-    method: "GET",
-    headers: {
-      authorization: "Bearer " + current_token,
-    },
-  });
+async function getListOfEvents(limit = 10, page = 0) {
+  const response = await fetch(
+    `${window.API_URL}/events?limit=${limit}&page=${page}`,
+    {
+      method: "GET",
+      headers: {
+        authorization: "Bearer " + current_token,
+      },
+    }
+  );
   const json = await response.json();
   return json;
 }
